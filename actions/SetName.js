@@ -7,7 +7,6 @@ class SetName extends Action {
             ws.send();
             return;
         }
-
         const data = params.trim();
         if (data.length < 1 || data.length > 22) {
             ws.send(data.length < 1 ? JSON.stringify({

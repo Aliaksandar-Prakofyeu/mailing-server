@@ -13,7 +13,7 @@ class SendMessage extends Action {
         if (!receiver || receiver.length > 50) {
             ws.send(JSON.stringify({
                 result: 'error',
-                data: `Invalid receiver name`,
+                data: `Recipient name must be less than 50 symbols`,
             }))
             return
         }
@@ -21,7 +21,7 @@ class SendMessage extends Action {
         if (!title || title.length > 150) {
             ws.send(JSON.stringify({
                 result: 'error',
-                data: `Title is missing or too long`,
+                data: `Title is missing or longer than 150 symbols`,
             }))
             return
         }
@@ -29,7 +29,7 @@ class SendMessage extends Action {
         if (!body || body.length > 2500) {
             ws.send(JSON.stringify({
                 result: 'error',
-                data: `Message is missing or too long`,
+                data: `Message is missing or longer than 2500 symbols`,
             }))
             return
         }
