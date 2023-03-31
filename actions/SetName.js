@@ -8,13 +8,13 @@ class SetName extends Action {
             return;
         }
         const data = params.trim();
-        if (data.length < 1 || data.length > 22) {
+        if (data.length < 1 || data.length > 50) {
             ws.send(data.length < 1 ? JSON.stringify({
                 result: 'error',
-                data: `${data} is too short`,
+                data: `Username is too short`,
             }) : JSON.stringify({
                 result: 'error',
-                data: `${data} is too short`,
+                data: `Username is longer than 50 symbols`,
             }));
             return;
         }
